@@ -1,10 +1,96 @@
-- 👋 Hi, I’m @nasarmandapati
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
 
-<!---
-nasarmandapati/nasarmandapati is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Css:-POST /api/notes
+
+Request Body:
+{
+  "title": "Note Title",
+  "content": "Note Content",
+  "type": "text",  // Can be "text", "audio", or "video"
+  "userId": "user123"  // The ID of the user creating the note
+}
+
+GET /api/notes/{noteId}
+
+Response Body:
+{
+  "id": "note123",
+  "title": "Note Title",
+  "content": "Note Content",
+  "type": "text",
+  "userId": "user123",
+  "createdAt": "2023-06-15T10:30:00Z"
+}
+
+
+PUT /api/notes/{noteId}
+
+Request Body:
+{
+  "title": "Updated Note Title",
+  "content": "Updated Note Content",
+  "type": "text"
+}
+
+
+DELETE /api/notes/{noteId}
+
+
+GET /api/users/{userId}/notes
+
+Response Body:
+{
+  "notes": [
+    {
+      "id": "note123",
+      "title": "Note Title",
+      "content": "Note Content",
+      "type": "text",
+      "userId": "user123",
+      "createdAt": "2023-06-15T10:30:00Z"
+    },
+    // Other notes...
+  ]
+}
+
+
+
+POST /api/notes/{noteId}/share
+
+Request Body:
+{
+  "sharedUserId": "user456"
+}
+
+
+
+GET /api/users/{userId}/shared-notes
+
+Response Body:
+{
+  "notes": [
+    {
+      "id": "note123",
+      "title": "Note Title",
+      "content": "Note Content",
+      "type": "text",
+      "userId": "user123",
+      "createdAt": "2023-06-15T10:30:00Z"
+    },
+    // Other shared notes...
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
